@@ -1,0 +1,60 @@
+{
+  "mod1": [
+    {
+      "modId": 0,
+      "modName": "złoty",
+      "modWeight":2.5,
+      "modSize": 1.0,
+      "modValue": 4.0,
+      "modRisk": 3.5
+    },
+        {
+      "modId": 0,
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    },
+    {
+      "modId": 0,
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    },
+    {
+      "modId": 0,
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    },
+    {
+      "modId": 0,
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    },
+    {
+      "modId": 0,
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    },
+    {
+      "modId": 0,
+      "modName": "",
+      "modWeight":1.0,
+      "modSize": 1.0,
+      "modValue": 1.0,
+      "modRisk": 1.0
+    }
+  ]
+}
