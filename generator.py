@@ -197,21 +197,21 @@ while i < ResultSize:
 i=0
 while i < ResultSize:
     r = random.uniform(0.0,1.0)
-    if r < 0.005:
+    if r < 0.001:
         ids3.append(i)
         nam3.append(mod1name[4] + " "+ nam2[i])
         wei3.append(wei2[i])
         siz3.append(siz2[i])
         val3.append(round(val2[i] * mod1Value[4], 2))
         ris3.append(round(ris2[i] * mod1Risk[4], 2))
-    elif (r < 0.02 and r >= 0.005):
+    elif (r < 0.01 and r >= 0.001):
         ids3.append(i)
         nam3.append(mod1name[3] + " " + nam2[i])
         wei3.append(wei2[i])
         siz3.append(siz2[i])
         val3.append(round(val2[i] * mod1Value[3], 2))
         ris3.append(round(ris2[i] * mod1Risk[3], 2))
-    elif (r < 0.05 and r >= 0.02):
+    elif (r < 0.05 and r >= 0.01):
         ids3.append(i)
         nam3.append(mod1name[2] + " " + nam2[i])
         wei3.append(wei2[i])

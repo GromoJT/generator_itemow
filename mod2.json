@@ -72,8 +72,8 @@
       "modName": "Cursed",
       "modWeight":1.0,
       "modSize": 1.0,
-      "modValue": 1.2,
-      "modRisk": 1.7
+      "modValue": 1.4,
+      "modRisk": 3.0
     },{
       "modId": 9,
       "modRarity": "epic",
@@ -87,7 +87,7 @@
       "modId": 10,
       "modRarity": "epic",
       "modName": "Golden",
-      "modWeight":2.0,
+      "modWeight":4.0,
       "modSize": 1.0,
       "modValue": 3.0,
       "modRisk": 1.9
