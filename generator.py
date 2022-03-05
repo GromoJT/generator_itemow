@@ -2,7 +2,7 @@ import json
 import random
 
 ResultSize = 10000
-GotowaLista = "{'items':["
+GotowaLista = '{"items":[\n'
 ids = []
 rar = []
 nam = []
@@ -302,9 +302,33 @@ while i < ResultSize:
 
 i = 0
 while i < ResultSize-1:
-    GotowaLista = GotowaLista+"{'id':'"+str(ids4[i])+"',"+"'name':'"+nam4[i]+"','weight':"+str(wei4[i])+",'size':"+str(siz4[i])+",'value':"+str(val4[i])+",'risk':"+str(ris4[i])+"},"
+    GotowaLista = GotowaLista+'{"id":'+str(ids4[i])+','+\
+                  '"name":"'+nam4[i]+\
+                  '","weight":'+str(wei4[i])+\
+                  ',"size":'+str(siz4[i])+\
+                  ',"value":'+str(val4[i])+\
+                  ',"risk":'+str(ris4[i])+'},'
     i=i+1
-GotowaLista = GotowaLista+"{'id':'"+str(ids4[ResultSize-1])+"',"+"'name':'"+nam4[ResultSize-1]+"','weight':"+str(wei4[ResultSize-1])+",'size':"+str(siz4[ResultSize-1])+",'value':"+str(val4[ResultSize-1])+",'risk':"+str(ris4[ResultSize-1])+"}]}"
+GotowaLista = GotowaLista+'{"id":'+str(ids4[ResultSize-1])+\
+              ',"name":"'+nam4[ResultSize-1]+\
+              '","weight":'+str(wei4[ResultSize-1])+\
+              ',"size":'+str(siz4[ResultSize-1])+\
+              ',"value":'+str(val4[ResultSize-1])+\
+              ',"risk":'+str(ris4[ResultSize-1])+'}]}'
 
-print(json.dumps(GotowaLista, sort_keys=True, indent=4))
 print(GotowaLista)
+print(type(GotowaLista))
+
+wynik = json.loads(GotowaLista)
+print(wynik)
+print(type(wynik))
+
+new_wynik = json.dumps(wynik,indent=4)
+print(new_wynik)
+
+with open('wynik.json', 'w') as f:
+    json.dump(wynik, f,indent=4)
+
+
+
+
