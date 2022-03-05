@@ -3,7 +3,7 @@
     {
       "itemId": 0,
       "itemRarity": "uncommon",
-      "itemName": "Miecz",
+      "itemName": "Sword",
       "itemWeight": 1.2,
       "itemSize": 0.5,
       "itemValue": 5.2,
@@ -12,7 +12,7 @@
     {
       "itemId": 1,
       "itemRarity": "uncommon",
-      "itemName": "Tarcza",
+      "itemName": "Shield",
       "itemWeight": 2.6,
       "itemSize": 2.8,
       "itemValue": 3.2,
@@ -21,7 +21,7 @@
     {
       "itemId": 2,
       "itemRarity": "common",
-      "itemName": "Tarcza",
+      "itemName": "Torch",
       "itemWeight": 2.6,
       "itemSize": 2.8,
       "itemValue": 3.2,
@@ -30,7 +30,7 @@
     {
       "itemId": 3,
       "itemRarity": "uncommon",
-      "itemName": "Pancerz",
+      "itemName": "Armor",
       "itemWeight": 6.3,
       "itemSize": 8.8,
       "itemValue": 14.2,
@@ -39,7 +39,7 @@
     {
       "itemId": 4,
       "itemRarity": "rare",
-      "itemName": "Pierscionek",
+      "itemName": "Ring",
       "itemWeight": 0.6,
       "itemSize": 0.2,
       "itemValue": 1.2,
@@ -48,7 +48,7 @@
     {
       "itemId": 5,
       "itemRarity": "common",
-      "itemName": "Luk",
+      "itemName": "Bow",
       "itemWeight": 1.3,
       "itemSize": 1.0,
       "itemValue": 2.0,
@@ -57,7 +57,7 @@
     {
       "itemId": 6,
       "itemRarity": "uncommon",
-      "itemName": "Kusza",
+      "itemName": "Crossbow",
       "itemWeight": 2.0,
       "itemSize": 1.8,
       "itemValue": 3.1,
@@ -66,7 +66,7 @@
     {
       "itemId": 7,
       "itemRarity": "common",
-      "itemName": "But",
+      "itemName": "Shoe",
       "itemWeight": 2.6,
       "itemSize": 2.8,
       "itemValue": 3.2,
@@ -75,38 +75,38 @@
     {
       "itemId": 8,
       "itemRarity": "common",
-      "itemName": "Tarcza",
-      "itemWeight": 2.6,
-      "itemSize": 2.8,
-      "itemValue": 3.2,
-      "itemRisk": 0.2
+      "itemName": "coin",
+      "itemWeight": 0.1,
+      "itemSize": 0.2,
+      "itemValue": 0.5,
+      "itemRisk": 0.3
     },
     {
       "itemId": 9,
       "itemRarity": "common",
-      "itemName": "Tarcza",
-      "itemWeight": 2.6,
-      "itemSize": 2.8,
-      "itemValue": 3.2,
+      "itemName": "Arrow",
+      "itemWeight": 0.1,
+      "itemSize": 0.3,
+      "itemValue": 0.9,
       "itemRisk": 0.2
     },
     {
       "itemId": 10,
       "itemRarity": "epic",
-      "itemName": "Ser",
-      "itemWeight": 2.6,
-      "itemSize": 2.8,
-      "itemValue": 3.2,
-      "itemRisk": 0.2
+      "itemName": "Cheese",
+      "itemWeight": 0.6,
+      "itemSize": 0.6,
+      "itemValue": 2.2,
+      "itemRisk": 0.6
     },
     {
       "itemId": 11,
       "itemRarity": "legendary",
-      "itemName": "sedes",
+      "itemName": "Toilet",
       "itemWeight": 2.6,
       "itemSize": 2.8,
       "itemValue": 3.2,
-      "itemRisk": 0.2
+      "itemRisk": 5.2
     }
   ]
 }

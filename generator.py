@@ -1,7 +1,7 @@
 import json
 import random
 
-ResultSize = 10
+ResultSize = 50
 
 ids = []
 rar = []
@@ -11,6 +11,7 @@ siz = []
 val = []
 ris = []
 
+mod1id = []
 mod1name = []
 mod1Weight = []
 mod1Size = []
@@ -26,6 +27,8 @@ siz2 = []
 val2 = []
 ris2 = []
 
+mod2id = []
+mod2Rarity = []
 mod2name = []
 mod2Weight = []
 mod2Size = []
@@ -40,12 +43,25 @@ siz3 = []
 val3 = []
 ris3 = []
 
+ids4 = []
+rar4 = []
+nam4 = []
+wei4 = []
+siz4 = []
+val4 = []
+ris4 = []
+
 common = []
 uncommon = []
 rare = []
 epic = []
 legendary = []
 
+m_id = []
+m_normal = []
+m_rare = []
+m_epic = []
+m_legendary = []
 
 with open('baseItems.json') as f:
     data = json.load(f)
@@ -61,23 +77,39 @@ for item in data['baseItems']:
 with open('mod1.json') as f1:
     data1 = json.load(f1)
 for mod in data1['mod1']:
+    mod1id.append(mod['modId'])
     mod1name.append(mod['modName'])
     mod1Weight.append(mod['modWeight'])
     mod1Size.append(mod['modSize'])
     mod1Value.append(mod['modValue'])
     mod1Risk.append(mod['modRisk'])
 
+with open('mod2.json') as f1:
+    data1 = json.load(f1)
+for mod in data1['mod2']:
+    mod2id.append(mod['modId'])
+    mod2Rarity.append(mod["modRarity"])
+    mod2name.append(mod['modName'])
+    mod2Weight.append(mod['modWeight'])
+    mod2Size.append(mod['modSize'])
+    mod2Value.append(mod['modValue'])
+    mod2Risk.append(mod['modRisk'])
+
+mod2list_len = len(data1["mod2"])
+
 items_len = len(data['baseItems'])
-print(items_len)
 
-
-
-
-
-
-
-
-
+i=0
+while i < items_len:
+    if mod2Rarity[i] == "legendary":
+        m_legendary.append(mod2id[i])
+    elif mod2Rarity[i] =="epic":
+        m_epic.append(mod2id[i])
+    elif mod2Rarity[i] =="rare":
+        m_rare.append(mod2id[i])
+    else:
+        m_normal.append(mod2id[i])
+    i = i + 1
 
 
 i=0
@@ -95,19 +127,14 @@ while i < items_len:
     i = i + 1
 
 
-
-
-
-
-
-
 print("Legendary = ",legendary)
 print("Epic = ",epic)
 print("Rare = ",rare)
 print("Uncommon = ",uncommon)
 print("Common = ",common)
 
-i =0
+
+i = 0
 sedes = 0
 while i < ResultSize:
     r = random.uniform(0.0,1.0)
@@ -155,11 +182,107 @@ while i < ResultSize:
     i = i + 1
 
 
-print(sedes)
-print(ids2)
-print(nam2)
-print(wei2)
-print(siz2)
-print(val2)
-print(ris2)
+# print(sedes)
+# print(ids2)
+# print(nam2)
+# print(wei2)
+# print(siz2)
+# print(val2)
+# print(ris2)
 
+# po wygenerowaniu bazowych itemów następuje teraz nadanie im pierwszego modyfikatora (w tym wypadku jakości oznaczonej podobnie co rzadkość)
+
+i=0
+while i < ResultSize:
+    r = random.uniform(0.0,1.0)
+    if r < 0.005:
+        ids3.append(i)
+        nam3.append(mod1name[4] + " "+ nam2[i])
+        wei3.append(wei2[i])
+        siz3.append(siz2[i])
+        val3.append(round(val2[i] * mod1Value[4], 2))
+        ris3.append(round(ris2[i] * mod1Risk[4], 2))
+    elif (r < 0.02 and r >= 0.005):
+        ids3.append(i)
+        nam3.append(mod1name[3] + " " + nam2[i])
+        wei3.append(wei2[i])
+        siz3.append(siz2[i])
+        val3.append(round(val2[i] * mod1Value[3], 2))
+        ris3.append(round(ris2[i] * mod1Risk[3], 2))
+    elif (r < 0.05 and r >= 0.02):
+        ids3.append(i)
+        nam3.append(mod1name[2] + " " + nam2[i])
+        wei3.append(wei2[i])
+        siz3.append(siz2[i])
+        val3.append(round(val2[i] * mod1Value[2], 2))
+        ris3.append(round(ris2[i] * mod1Risk[2], 2))
+    elif (r < 0.15 and r >= 0.05):
+        ids3.append(i)
+        nam3.append(mod1name[1] + " " + nam2[i])
+        wei3.append(wei2[i])
+        siz3.append(siz2[i])
+        val3.append(round(val2[i] * mod1Value[1], 2))
+        ris3.append(round(ris2[i] * mod1Risk[1], 2))
+    else:
+        ids3.append(i)
+        nam3.append(nam2[i])
+        wei3.append(wei2[i])
+        siz3.append(siz2[i])
+        val3.append(round(val2[i] * mod1Value[0], 2))
+        ris3.append(round(ris2[i] * mod1Risk[0], 2))
+    i = i + 1
+
+# print(ids3)
+# print(nam3)
+# print(wei3)
+# print(siz3)
+# print(val3)
+# print(ris3)
+
+# Teraz dodajemy mod2
+
+
+
+i = 0
+while i < ResultSize:
+    r = random.uniform(0.0,1.0)
+    if r < 0.0005:
+        r2 = random.choice(m_legendary)
+        ids4.append(i)
+        nam4.append(mod2name[r2] +" "+ nam3[i])
+        wei4.append(round(wei3[i] * mod2Weight[r2], 2))
+        siz4.append(round(siz3[i] * mod2Size[r2], 2))
+        val4.append(round(val3[i] * mod2Value[r2], 2))
+        ris4.append(round(ris3[i] * mod2Risk[r2], 2))
+    elif (r < 0.01 and r >= 0.0005):
+        r2 = random.choice(m_epic)
+        ids4.append(i)
+        nam4.append(mod2name[r2] + " " + nam3[i])
+        wei4.append(round(wei3[i] * mod2Weight[r2], 2))
+        siz4.append(round(siz3[i] * mod2Size[r2], 2))
+        val4.append(round(val3[i] * mod2Value[r2], 2))
+        ris4.append(round(ris3[i] * mod2Risk[r2], 2))
+    elif (r < 0.03 and r >= 0.01):
+        r2 = random.choice(m_rare)
+        ids4.append(i)
+        nam4.append(mod2name[r2] + " " + nam3[i])
+        wei4.append(round(wei3[i] * mod2Weight[r2], 2))
+        siz4.append(round(siz3[i] * mod2Size[r2], 2))
+        val4.append(round(val3[i] * mod2Value[r2], 2))
+        ris4.append(round(ris3[i] * mod2Risk[r2], 2))
+    else:
+        r2 = random.choice(m_normal)
+        ids4.append(i)
+        nam4.append(mod2name[r2] + " " + nam3[i])
+        wei4.append(round(wei3[i] * mod2Weight[r2], 2))
+        siz4.append(round(siz3[i] * mod2Size[r2], 2))
+        val4.append(round(val3[i] * mod2Value[r2], 2))
+        ris4.append(round(ris3[i] * mod2Risk[r2], 2))
+    i = i + 1
+
+print(ids4)
+print(nam4)
+print(wei4)
+print(siz4)
+print(val4)
+print(ris4)
